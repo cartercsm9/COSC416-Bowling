@@ -20,6 +20,10 @@ public class Gutter : MonoBehaviour
     
     private void OnTriggerEnter(Collider triggeredBody)
     {
+        // Only execute if the object's name is "Ball"
+        if (triggeredBody.gameObject.name != "Ball")
+            return;
+
         Debug.Log("Trigger activated by: " + triggeredBody.gameObject.name);
         
         Rigidbody ballRigidBody = triggeredBody.GetComponent<Rigidbody>();
